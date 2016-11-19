@@ -1,0 +1,12 @@
+{
+  "classPath": "Sources",
+  "contributors": [ "dstrekelj" ],
+  "dependencies": { },
+  "description": "General purpose collision (intersection) detection library",
+  "name": "jolt",
+  "license": "Zlib",
+  "releasenote": "Initial release",
+  "tags": [ "game", "kha" ],
+  "url" : "https://github.com/dstrekelj/mokha/",
+  "version": "1.0.0"
+}
