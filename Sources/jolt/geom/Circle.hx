@@ -35,7 +35,7 @@ class Circle extends Shape {
 	}
 
 	@:noCompletion inline function get_origin() return vertices[0];
-	@:noCompletion inline function set_r(r) {
+	@:noCompletion inline function set_r(r : Float) : Float {
 		d = 2 * r;
 		return this.r = r;
 	}
