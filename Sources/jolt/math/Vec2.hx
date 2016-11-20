@@ -12,7 +12,7 @@ class Vec2 {
 	public var y : Float;
 
 	/**
-		Creates new two-component vector of floating point values.
+		Creates new vector.
 		@param	x	X component
 		@param	y	Y component
 	*/
@@ -27,7 +27,9 @@ class Vec2 {
 		@return	New vector
 	*/
 	public inline function add(v : Vec2) : Vec2 {
-		return new Vec2(x + v.x, y + v.y);
+		return new Vec2(
+			x + v.x,	y + v.y
+		);
 	}
 
 	/**
@@ -45,7 +47,9 @@ class Vec2 {
 		@return	New vector
 	*/
 	public inline function div(v : Float) : Vec2 {
-		return new Vec2(x / v, y / v);
+		return new Vec2(
+			x / v,	y / v
+		);
 	}
 
 	/**
@@ -73,7 +77,9 @@ class Vec2 {
 		@return	New vector
 	*/
 	public inline function lerp(v : Vec2, f : Float) : Vec2 {
-		return new Vec2(x + (v.x - x) * f, y + (v.y - y) * f);
+		return new Vec2(
+			x + (v.x - x) * f,	y + (v.y - y) * f
+		);
 	}
 
 	/**
@@ -81,8 +87,21 @@ class Vec2 {
 		@param	s	Scalar
 		@return	New vector
 	*/
-	public inline function mul(B : Float) : Vec2 {
-		return new Vec2(x * B, y * B);
+	public inline function mul(s : Float) : Vec2 {
+		return new Vec2(
+			x * s,	y * s
+		);
+	}
+
+	/**
+		Performs matrix multiplication, producing a new vector.
+		@param	m	Matrix
+		@return	New vector
+	*/
+	public inline function mulMat(m : Mat3) : Vec2 {
+		return new Vec2(
+			x * m.xx + y * m.yx + m.zx,	x * m.xy + y * m.yy + m.yz,	x * m.xz + y * m.yz + z * m.zz 
+		)
 	}
 
 	/**
@@ -90,7 +109,9 @@ class Vec2 {
 		@return	New vector
 	*/
 	public inline function neg() : Vec2 {
-		return new Vec2(-x, -y);
+		return new Vec2(
+			-x,	-y
+		);
 	}
 
 	/**
@@ -99,7 +120,9 @@ class Vec2 {
 	*/
 	public inline function normalize() : Vec2 {
 		var l = len();
-		return new Vec2(x / l, y / l);
+		return new Vec2(
+			x / l,	y / l
+		);
 	}
 
 	/**
@@ -108,7 +131,9 @@ class Vec2 {
 		@return	New vector
 	*/
 	public inline function sub(v : Vec2) : Vec2 {
-		return new Vec2(x - v.x, y - v.y);
+		return new Vec2(
+			x - v.x,	y - v.y
+		);
 	}
 
 	/**
